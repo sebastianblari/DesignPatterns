@@ -17,3 +17,5 @@ gradebook/test/Gradebook.Tests/obj/Debug/netcoreapp3.0/Gradebook.Tests.AssemblyI
 gradebook/src/Gradebook/bin/Debug/netcoreapp3.0/Gradebook
 gradebook/src/Gradebook/obj/Debug/netcoreapp3.0/Gradebook
 gradebook/test/Gradebook.Tests/bin/Debug/netcoreapp3.0/Gradebook
+gradebook/.vs/gradebook/v16/.suo
+gradebook/.vs/slnx.sqlite

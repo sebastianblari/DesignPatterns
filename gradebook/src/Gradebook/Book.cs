@@ -3,12 +3,15 @@ using System.Collections.Generic;
 
 namespace Gradebook
 {
-    public class Book
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
+    public class Book : NamedObject
     {
-        public Book(string name)
+        public Book(string name) : base(name)
         {
+            result = new Statistics();
             grades = new List<double>();
-            this.name = name;
+            Name = name;
         }
 
         public void AddGrade(double grade)
@@ -16,6 +19,10 @@ namespace Gradebook
             if(0.0 <= grade && grade <= 100)
             {
                 this.grades.Add(grade);
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
@@ -51,43 +58,16 @@ namespace Gradebook
             }
         }
 
-        public double Average()
-        {
-            double l_average = 0.0;
-            foreach(var grade in this.grades)
-            {
-                l_average += grade;
-            }
-            this.average = l_average / this.grades.Count;
-            return average;
-        }
-
-        public double Highest()
-        {
-            this.highest = Double.MinValue;
-            foreach (var grade in this.grades)
-            {
-                this.highest = Math.Max(this.highest, grade);
-            }
-            return this.highest;
-        }
-
-        public double Lowest()
-        {
-            this.lowest = Double.MaxValue;
-            foreach (var grade in this.grades)
-            {
-                this.lowest = Math.Min(this.lowest, grade);
-            }
-            return this.lowest;
-        }
-
         public Statistics GetStatistics()
         {
-            var result = new Statistics();
-            result.Average = this.Average();
-            result.High = this.Highest();
-            result.Low = this.Lowest();
+            foreach (var grade in this.grades)
+            {
+                result.Average += grade;
+                result.High = Math.Max(result.High, grade);
+                result.Low = Math.Min(result.Low, grade);
+            }
+            result.Average = result.Average / this.grades.Count;
+
             switch (result.Average)
             {
                 case var letter when letter >= 90.0:
@@ -108,16 +88,16 @@ namespace Gradebook
             }
 
 
-            Console.WriteLine($"{name}'s average grade is: {this.Average()}");
-            Console.WriteLine($"{name}'s highest grade is: {this.Highest()}");
-            Console.WriteLine($"{name}'s lowest grade is: {this.Lowest()}");
+            Console.WriteLine($"{Name}'s average grade is: {result.Average}");
+            Console.WriteLine($"{Name}'s highest grade is: {result.High}");
+            Console.WriteLine($"{Name}'s lowest grade is: {result.Low}");
+            Console.WriteLine($"{Name}'s average grade is: {result.Letter}");
             return result;
         }
 
+        public event GradeAddedDelegate GradeAdded;
+
         private List<double> grades;
-        private double average;
-        private string name;
-        private double highest;
-        private double lowest;
+        public Statistics result;
     }
 }
