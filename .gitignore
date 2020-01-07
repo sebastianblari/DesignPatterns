@@ -19,3 +19,12 @@ gradebook/src/Gradebook/obj/Debug/netcoreapp3.0/Gradebook
 gradebook/test/Gradebook.Tests/bin/Debug/netcoreapp3.0/Gradebook
 gradebook/.vs/gradebook/v16/.suo
 gradebook/.vs/slnx.sqlite
+*.exe
+*.config
+gradebook/src/Gradebook/.vs/Gradebook/DesignTimeBuild/.dtbcache
+gradebook/src/Gradebook/.vs/Gradebook/v16/.suo
+gradebook/src/Gradebook/.vs/Gradebook/v16/Server/sqlite3/storage.ide-shm
+gradebook/src/Gradebook/.vs/Gradebook/v16/Server/sqlite3/storage.ide-wal
+gradebook/src/Gradebook/.vs/slnx.sqlite
+gradebook/src/Gradebook/obj/Release/netcoreapp3.0/Gradebook.AssemblyInfo.cs
+gradebook/test/Gradebook.Tests/Gradebook.Tests.csproj.user
