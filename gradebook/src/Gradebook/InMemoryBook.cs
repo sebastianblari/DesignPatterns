@@ -29,7 +29,7 @@ namespace Gradebook
             }
         }
 
-        public override void AddGrade(char letter)
+        public override void AddGrade(char letter)  
         {
             if ((letter != 'A') || (letter != 'B') || (letter != 'C') || (letter != 'D'))
             {
@@ -57,46 +57,10 @@ namespace Gradebook
             }
         }
 
-        public Statistics GetStatistics()
-        {
-            foreach (var grade in this.grades)
-            {
-                result.Average += grade;
-                result.High = Math.Max(result.High, grade);
-                result.Low = Math.Min(result.Low, grade);
-            }
-            result.Average = result.Average / this.grades.Count;
+        public override void GetStatistics() { }
 
-            switch (result.Average)
-            {
-                case var letter when letter >= 90.0:
-                    result.Letter = 'A';
-                    break;
-                case var letter when letter >= 80.0:
-                    result.Letter = 'B';
-                    break;
-                case var letter when letter >= 70.0:
-                    result.Letter = 'C';
-                    break;
-                case var letter when letter >= 60.0:
-                    result.Letter = 'D';
-                    break;
-                default:
-                    result.Letter = 'F';
-                    break;
-            }
+        public override event GradeAddedDelegate GradeAdded;
 
-
-            Console.WriteLine($"{Name}'s average grade is: {result.Average}");
-            Console.WriteLine($"{Name}'s highest grade is: {result.High}");
-            Console.WriteLine($"{Name}'s lowest grade is: {result.Low}");
-            Console.WriteLine($"{Name}'s average grade is: {result.Letter}");
-            return result;
-        }
-
-        public event GradeAddedDelegate GradeAdded;
-
-        private List<double> grades;
-        public Statistics result;
+        
     }
 }
