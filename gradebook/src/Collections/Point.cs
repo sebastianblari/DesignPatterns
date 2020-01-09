@@ -12,6 +12,20 @@ namespace Collections
             Y = y;
             Z = z;
         }
+
+        public void SetToOrigin()
+        {
+            X = 0;
+            Y = 0;
+            Z = 0;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"X: {X}");
+            Console.WriteLine($"Y: {Y}");
+            Console.WriteLine($"Z: {Z}");
+        }
         public double X;
         public double Y;
         public double Z;
