@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LinkedList
 {
-    class LinkedList<type>
+    public class LinkedList<type>
     {
         public LinkedList()
         {
@@ -14,6 +14,7 @@ namespace LinkedList
         public void AddToHead(type data)
         {
             LinkedListNode<type> newNode = new LinkedListNode<type>();
+            newNode.LinkedList = this;
             newNode.Data = data;
             newNode.PrevNode = HeadNode;
             if ((HeadNode == null) && (TailNode == null))
@@ -36,6 +37,7 @@ namespace LinkedList
         {
             LinkedListNode<type> newNode = new LinkedListNode<type>();
             newNode.Data = data;
+            newNode.LinkedList = this;
             newNode.PrevNode = HeadNode;
             if ((HeadNode == null) && (TailNode == null))
             {
@@ -56,6 +58,7 @@ namespace LinkedList
         public void Insert(int index, type data)
         {
             LinkedListNode<type> newNode = new LinkedListNode<type>();
+            newNode.LinkedList = this;
             LinkedListNode<type> localNode = TailNode;
             switch (index) 
             {
@@ -93,13 +96,39 @@ namespace LinkedList
 
         public void Remove(type data)        
         {
-            LinkedListNode<type> localLinkedList = TailNode;
-            while(!EqualityComparer<type>.Default.Equals(localLinkedList.Data, data))
+            LinkedListNode<type> localLinkedListNode = TailNode;
+            while(!EqualityComparer<type>.Default.Equals(localLinkedListNode.Data, data))
             {
-                localLinkedList = localLinkedList.NextNode;
+                localLinkedListNode = localLinkedListNode.NextNode;
             }
-            localLinkedList.PrevNode.NextNode = localLinkedList.NextNode;
-            localLinkedList.NextNode.PrevNode = localLinkedList.PrevNode;
+            this.Remove(localLinkedListNode);
+        }
+
+        public void Remove(LinkedListNode<type> localLinkedListNode)
+        {
+            if (Count == 1)
+            {
+                TailNode = null;
+                HeadNode = null;
+            }
+            else
+            {
+                switch (localLinkedListNode)
+                {
+                    case var node when node == TailNode:
+                        TailNode = localLinkedListNode.NextNode;
+                        localLinkedListNode.NextNode.PrevNode = null;
+                        break;
+                    case var node when node == HeadNode:
+                        HeadNode = localLinkedListNode.PrevNode;
+                        localLinkedListNode.PrevNode.NextNode = null;
+                        break;
+                    default:
+                        localLinkedListNode.PrevNode.NextNode = localLinkedListNode.NextNode;
+                        localLinkedListNode.NextNode.PrevNode = localLinkedListNode.PrevNode;
+                        break;
+                }
+            }
             Count--;
         }
 
@@ -112,6 +141,16 @@ namespace LinkedList
                 localNode = localNode.NextNode;
             }
         }
+        public LinkedListNode<type> GetHead()
+        {
+            return HeadNode;
+        }
+
+        public LinkedListNode<type> GetTail()
+        {
+            return TailNode;
+        }
+
         private LinkedListNode<type> HeadNode;
         private LinkedListNode<type> TailNode;
         public int Count;
