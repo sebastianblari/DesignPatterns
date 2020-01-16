@@ -22,23 +22,26 @@ namespace LinkedList
             //intList.Remove(0);
             //intList.PrintLinkedList();
 
-            //Stack<string> playList = new Stack<string>();
-            //playList.Push("Wash it all away");
-            //playList.Push("This means war");
-            //playList.Push("Nothing else matters");
-            //Console.WriteLine(playList.Pop());
-            //Console.WriteLine(playList.Pop());
-            //Console.WriteLine(playList.Pop());
-            //Console.WriteLine("Bye");
-
-            Queue<string> playList = new Queue<string>();
-            playList.Add("Wash it all away");
-            playList.Add("This means war");
-            playList.Add("Nothing else matters");
-            Console.WriteLine(playList.Remove());
-            Console.WriteLine(playList.Remove());
-            Console.WriteLine(playList.Remove());
+            Stack<string> playList = new Stack<string>();
+            playList.Push("Wash it all away");
+            playList.Push("This means war");
+            playList.Push("Nothing else matters");
+            Console.WriteLine(playList.Pop());
+            Console.WriteLine(playList.Pop());
+            Console.WriteLine(playList.Pop());
+            playList.Push("Wash it all away");
+            playList.Push("This means war");
+            playList.Push("Nothing else matters");
             Console.WriteLine("Bye");
+
+            //Queue<string> playList = new Queue<string>();
+            //playList.Add("Wash it all away");
+            //playList.Add("This means war");
+            //playList.Add("Nothing else matters");
+            //Console.WriteLine(playList.Remove());
+            //Console.WriteLine(playList.Remove());
+            //Console.WriteLine(playList.Remove());
+            //Console.WriteLine("Bye");
         }
     }
 }

@@ -11,7 +11,9 @@ namespace LinkedList
         }
         ~LinkedListNode()
         {
+            Console.WriteLine($"LinkedListNode containing {Data} was deleted");
         }
+        
         public LinkedListNode<type> PrevNode;
         public LinkedListNode<type> NextNode;
         public LinkedList<type> LinkedList;

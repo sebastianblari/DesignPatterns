@@ -4,12 +4,16 @@ using System.Text;
 
 namespace LinkedList
 {
-    public class LinkedList<type>
+    public class LinkedList<type> : IDisposable
     {
         public LinkedList()
         {
             HeadNode = null;
             TailNode = null;
+        }
+        ~LinkedList()
+        {
+            Console.WriteLine($"Linked List was eliminated");
         }
         public void AddToHead(type data)
         {
@@ -94,10 +98,10 @@ namespace LinkedList
             }
         }
 
-        public void Remove(type data)        
+        public void Remove(type data)
         {
             LinkedListNode<type> localLinkedListNode = TailNode;
-            while(!EqualityComparer<type>.Default.Equals(localLinkedListNode.Data, data))
+            while (!EqualityComparer<type>.Default.Equals(localLinkedListNode.Data, data))
             {
                 localLinkedListNode = localLinkedListNode.NextNode;
             }
@@ -129,6 +133,7 @@ namespace LinkedList
                         break;
                 }
             }
+            
             Count--;
         }
 
