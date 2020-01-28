@@ -54,3 +54,11 @@ gradebook/src/EventsDelegatesLambdas/.vs/EventsDelegatesLambdas/v16/.suo
 gradebook/src/EventsDelegatesLambdas/.vs/EventsDelegatesLambdas/v16/Server/sqlite3/storage.ide-shm
 gradebook/src/EventsDelegatesLambdas/.vs/EventsDelegatesLambdas/v16/Server/sqlite3/storage.ide-wal
 gradebook/src/EventsDelegatesLambdas/EventsDelegatesLambdas/obj/Debug/netcoreapp3.1/EventsDelegatesLambdas.AssemblyInfo.cs
+mocking/.vs/mocking/DesignTimeBuild/.dtbcache
+mocking/.vs/mocking/v16/.suo
+mocking/.vs/mocking/v16/Server/sqlite3/storage.ide-shm
+mocking/.vs/mocking/v16/Server/sqlite3/storage.ide-wal
+mocking/.vs/mocking/v16/TestStore/0/000-0000.testlog
+mocking/.vs/mocking/v16/TestStore/0/testlog.manifest
+mocking/Loans.Test/bin/Debug/netcoreapp3.1/nunit_random_seed.tmp
+*.AssemblyInfo.cs
