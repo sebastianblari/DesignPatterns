@@ -5,9 +5,12 @@ using Loans.Domain;
 using Loans.Domain.Applications;
 using NUnit.Framework;
 
+
 namespace Loans.Tests
 {
-    [TestFixture]
+    [ProductComparison]
+    [Category("Product Comparison")]
+    //[TestFixture]
     public class ProductComparerShould
     {
         private List<LoanProduct> products;
@@ -37,7 +40,6 @@ namespace Loans.Tests
         }
 
         [Test]
-        [Category("Product Comparison")]
         public void ReturnCorrectNumberOfComparisons()
         {
 
@@ -76,12 +78,14 @@ namespace Loans.Tests
 
 
 
-            Assert.That(comparisons, Has.Exactly(1)
-                                        .Matches<MonthlyRepaymentComparison>(i => i.ProductName == "a")
-                                        .And
-                                        .Matches<MonthlyRepaymentComparison>(i => i.InterestRate == 1)
-                                        .And
-                                        .Matches<MonthlyRepaymentComparison>(i => i.MonthlyRepayment > 0));
+            //Assert.That(comparisons, Has.Exactly(1)
+            //                            .Matches<MonthlyRepaymentComparison>(i => i.ProductName == "a")
+            //                            .And
+            //                            .Matches<MonthlyRepaymentComparison>(i => i.InterestRate == 1)
+            //                            .And
+            //                            .Matches<MonthlyRepaymentComparison>(i => i.MonthlyRepayment > 0));
+            Assert.That(comparisons, Has.Exactly(1).
+                                     Matches(new MonthlyRepaymentGreaterThanZeroConstraint("a", 1)));
         }
 
         [OneTimeTearDown]
