@@ -5,7 +5,7 @@ using Loans.Domain;
 using Loans.Domain.Applications;
 using NUnit.Framework;
 
-namespace Loans.Test
+namespace Loans.Tests
 {
     [TestFixture]
     public class LoanTermShould

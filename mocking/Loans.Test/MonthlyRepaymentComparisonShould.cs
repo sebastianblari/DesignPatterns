@@ -4,7 +4,6 @@ using NUnit.Framework;
 
 namespace Loans.Tests
 {
-    [ProductComparison]
     public class MonthlyRepaymentComparisonShould
     {
         [Test]

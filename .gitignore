@@ -62,3 +62,16 @@ mocking/.vs/mocking/v16/TestStore/0/000-0000.testlog
 mocking/.vs/mocking/v16/TestStore/0/testlog.manifest
 mocking/Loans.Test/bin/Debug/netcoreapp3.1/nunit_random_seed.tmp
 *.AssemblyInfo.cs
+LINQ/.vs/LINQ/DesignTimeBuild/.dtbcache
+LINQ/.vs/LINQ/v16/.suo
+LINQ/intro/Properties/AssemblyInfo.cs
+LINQ/Introduction/obj/Debug/netcoreapp3.1/Introduction.AssemblyInfo.cs
+LINQ/Introduction/obj/Debug/netcoreapp3.1/Introduction.AssemblyInfo.cs
+linq/obj/Debug/netcoreapp3.1/linq
+LINQ/Query/Movie.cs
+LINQ/Query/obj/Debug/netcoreapp3.1/CustomQuery.AssemblyInfo.cs
+LINQ/Query/obj/Debug/netcoreapp3.1/Query.AssemblyInfo.cs
+LINQ/Query/Program.cs
+LINQ/Query/Properties/AssemblyInfo.cs
+LINQ/xml/Program.cs
+LINQ/xml/Properties/AssemblyInfo.cs
