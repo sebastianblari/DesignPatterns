@@ -23,3 +23,11 @@
 *.FileListAbsolute.txt
 *.resources
 *.baml
+gradebook/gui/EventsDelegatesLambdas/EventsDelegatesLambdas/Properties/Settings.Designer.cs
+gradebook/gui/EventsDelegatesLambdas/EventsDelegatesLambdas/Properties/Resources.resx
+gradebook/gui/EventsDelegatesLambdas/EventsDelegatesLambdas/Properties/Resources.Designer.cs
+gradebook/gui/EventsDelegatesLambdas/EventsDelegatesLambdas/Properties/AssemblyInfo.cs
+gradebook/gui/EventsDelegatesLambdas/EventsDelegatesLambdas/obj/Debug/MainWindow.g.i.cs
+gradebook/gui/EventsDelegatesLambdas/EventsDelegatesLambdas/obj/Debug/MainWindow.g.cs
+gradebook/gui/EventsDelegatesLambdas/EventsDelegatesLambdas/obj/Debug/App.g.i.cs
+gradebook/gui/EventsDelegatesLambdas/EventsDelegatesLambdas/obj/Debug/App.g.cs
