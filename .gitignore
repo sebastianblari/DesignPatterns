@@ -2,9 +2,13 @@
 *.dll
 *.pdb
 *.suo
+*db.lock
 *.db.lock
 *.dtbcache
 *.ide
+*.props
+*.targets
+*.AssemblyInfo.Cs
 *.ide-shm
 *.ide-wal
 *.testlog
@@ -12,3 +16,5 @@
 *.json
 *.cache
 *.config
+*.sln
+*.csproj
