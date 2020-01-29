@@ -80,3 +80,6 @@ attributes/.vs/attributes/v16/TestStore/0/000-0000.testlog
 attributes/.vs/attributes/v16/TestStore/0/testlog.manifest
 *.ide-wal
 attributes/.vs/attributes/v16/.suo
+attributes/attributes/obj/Debug/netcoreapp3.1/attributes
+*.ide-shm
+attributes/attributes/bin/Debug/netcoreapp3.1/attributes
