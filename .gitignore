@@ -75,3 +75,8 @@ LINQ/Query/Program.cs
 LINQ/Query/Properties/AssemblyInfo.cs
 LINQ/xml/Program.cs
 LINQ/xml/Properties/AssemblyInfo.cs
+attributes/.vs/attributes/v16/Server/sqlite3/storage.ide-shm
+attributes/.vs/attributes/v16/TestStore/0/000-0000.testlog
+attributes/.vs/attributes/v16/TestStore/0/testlog.manifest
+*.ide-wal
+attributes/.vs/attributes/v16/.suo
