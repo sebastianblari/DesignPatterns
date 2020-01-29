@@ -18,3 +18,8 @@
 *.config
 *.sln
 *.csproj
+*.lref
+*.settings
+*.FileListAbsolute.txt
+*.resources
+*.baml
