@@ -347,3 +347,4 @@ fruitFinder/FF.API/App_Start/RouteConfig.cs
 fruitFinder/FF.API/App_Start/IdentityConfig.cs
 fruitFinder/FF.API/App_Start/FilterConfig.cs
 fruitFinder/FF.API/App_Start/BundleConfig.cs
+DesignPatterns/AdapterPattern/obj/Debug/netcoreapp3.1/AdapterPattern.csproj.CopyComplete
