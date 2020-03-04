@@ -6,7 +6,7 @@ using System.Text;
 
 namespace ShoppingCart.Business.Repositories
 {
-    public class ProductsRepository : IProductsRepository
+    public class ProductsRepository : IProductRepository
     {
         private Dictionary<string, (Product Product, int Stock)> Products { get; } = new Dictionary<string, (Product Product, int Stock)>();
 

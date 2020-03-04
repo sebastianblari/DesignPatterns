@@ -50,7 +50,7 @@ namespace ShoppingCart.Business.Repositories
         {
             LineItems.Remove(articleId);
         }
-        public void DecraseQuantity(string articleId)
+        public void DecreaseQuantity(string articleId)
         {
             if (LineItems.ContainsKey(articleId))
             {

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShoppingCart.Business.Repositories;
+using ShoppingCart.Windows.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +26,7 @@ namespace ShoppingCart.Windows
         {
             InitializeComponent();
 
-            var viewModel = new ShoppingCartViewModel(new ShoppingCartRepository(),
+            var viewModel = new ShoppingCartViewModel(new ShoppingCartRepository(), 
                 new ProductsRepository());
 
             viewModel.InitializeViewModel();

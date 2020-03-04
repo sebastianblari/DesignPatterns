@@ -1,6 +1,7 @@
 ﻿using ShoppingCart.Business.Repositories;
 using ShoppingCart.Business.Models;
 using System;
+using ShoppingCart.Business.Commands;
 
 namespace ShoppingCart
 {
@@ -19,28 +20,28 @@ namespace ShoppingCart
             shoppingCartRepository.IncreaseQuantity(product.ArticleId);
             shoppingCartRepository.IncreaseQuantity(product.ArticleId);
 
-            //var addToCartCommand = new AddToCartCommand(shoppingCartRepository,
-            //    productsRepository,
-            //    product);
+            var addToCartCommand = new AddToCartCommand(shoppingCartRepository,
+                productsRepository,
+                product);
 
-            //var increaseQuantityCommand = new ChangeQuantityCommand(
-            //    ChangeQuantityCommand.Operation.Increase,
-            //    shoppingCartRepository,
-            //    productsRepository,
-            //    product);
+            var increaseQuantityCommand = new ChangeQuantityCommand(
+                ChangeQuantityCommand.Operation.Increase,
+                shoppingCartRepository,
+                productsRepository,
+                product);
 
-            //var manager = new CommandManager();
-            //manager.Invoke(addToCartCommand);
-            //manager.Invoke(increaseQuantityCommand);
-            //manager.Invoke(increaseQuantityCommand);
-            //manager.Invoke(increaseQuantityCommand);
-            //manager.Invoke(increaseQuantityCommand);
+            var manager = new CommandManager();
+            manager.Invoke(addToCartCommand);
+            manager.Invoke(increaseQuantityCommand);
+            manager.Invoke(increaseQuantityCommand);
+            manager.Invoke(increaseQuantityCommand);
+            manager.Invoke(increaseQuantityCommand);
 
             PrintCart(shoppingCartRepository);
 
-            //manager.Undo();
+            manager.Undo();
 
-            //PrintCart(shoppingCartRepository);
+            PrintCart(shoppingCartRepository);
         }
 
         static void PrintCart(ShoppingCartRepository shoppingCartRepository)
