@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace AdapterPattern.Adapter
 {
@@ -16,7 +17,7 @@ namespace AdapterPattern.Adapter
 
         public async Task<IEnumerable<Person>> GetCharacters()
         {
-            return await _characterFileSource.GetCharactersFromFile(_filePath);
+            return (await _characterFileSource.GetCharactersFromFile(_filePath)).Select(character => new CharacterToPersonAdapter(character));
         }
     }
 }

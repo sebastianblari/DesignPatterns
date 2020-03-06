@@ -9,9 +9,9 @@ namespace AdapterPattern.Adapter
 {
     public class CharacterFileSource
     {
-        public async Task<List<Person>> GetCharactersFromFile(string filePath)
+        public async Task<List<Character>> GetCharactersFromFile(string filePath)
         {
-            return JsonConvert.DeserializeObject<List<Person>>(await File.ReadAllTextAsync(filePath));
+            return JsonConvert.DeserializeObject<List<Character>>(await File.ReadAllTextAsync(filePath));
         }
     }
 }

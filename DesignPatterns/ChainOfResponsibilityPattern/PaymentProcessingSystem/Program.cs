@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ChainOfResponsabilityPattern
+namespace PaymentProcessingSystem
 {
     class Program
     {
